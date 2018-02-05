@@ -2,52 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22914ea6-0b57-430a-9c66-31b24ad88f92" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.TribesIdle/.idea/contentModel.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.TribesIdle/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.TribesIdle/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.TribesIdle/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.idea.TribesIdle/riderModule.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Plugins.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Plugins/Editor.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/Unity3DRider.cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/Unity3DRider.cs.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Resources.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Scenes.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Scenes/Primary.unity" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Scenes/Primary.unity.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Buildings.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Buildings/Building.cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Buildings/Building.cs.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Buildings/Converter.cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Buildings/Converter.cs.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Enum/MetaResourceEnum.cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Enum/MetaResourceEnum.cs.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Enum/ResourceEnum.cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Enum/ResourceEnum.cs.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/BuildingManager.cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/BuildingManager.cs.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Manager.cs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/Manager.cs.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjectSettings/ClusterInputManager.asset" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjectSettings/NetworkManager.asset" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjectSettings/TimeManager.asset" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ProjectSettings/UnityConnectSettings.asset" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/Util/SerializableEnum.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Util/SerializableEnum.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,8 +19,8 @@
           <file leaf-file-name="Converter.cs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Assets/Scripts/Buildings/Converter.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3060">
-                  <caret line="180" column="48" lean-forward="false" selection-start-line="180" selection-start-column="48" selection-end-line="180" selection-end-column="48" />
+                <state relative-caret-position="408">
+                  <caret line="24" column="51" lean-forward="false" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
                   <folding>
                     <marker date="1517869323712" expanded="true" signature="6:45" ph="..." />
                     <marker date="1517869323712" expanded="true" signature="66:6023" ph="{...}" />
@@ -139,7 +94,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="BuildingManager.cs" pinned="false" current-in-tab="true">
+          <file leaf-file-name="BuildingManager.cs" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Assets/Scripts/Managers/BuildingManager.cs">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="0">
@@ -147,6 +102,21 @@
                   <folding>
                     <marker date="1517869372118" expanded="true" signature="18:62" ph="{...}" />
                     <marker date="1517869372118" expanded="true" signature="51:60" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SerializableEnum.cs" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Assets/Scripts/Util/SerializableEnum.cs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="204">
+                  <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+                  <folding>
+                    <marker date="1517870277526" expanded="true" signature="6:32" ph="..." />
+                    <marker date="1517870277526" expanded="true" signature="48:381" ph="{...}" />
+                    <marker date="1517870277526" expanded="true" signature="137:379" ph="{...}" />
+                    <marker date="1517870277526" expanded="true" signature="166:265" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -171,6 +141,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/Manager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enum/MetaResourceEnum.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/BuildingManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Util/SerializableEnum.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -184,6 +155,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Buildings/Converter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Buildings/Building.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/BuildingManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Util/SerializableEnum.cs" />
       </list>
     </option>
   </component>
@@ -196,7 +168,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="1913" />
     <option name="y" value="87" />
-    <option name="width" value="1587" />
+    <option name="width" value="2567" />
     <option name="height" value="1407" />
   </component>
   <component name="ProjectView">
@@ -224,6 +196,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="TribesIdle (2 projects)" />
+              <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TribesIdle (2 projects)" />
+              <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assembly-CSharp" />
+              <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Assets" />
+              <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerNodeRider" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Util" />
               <option name="myItemType" value="com.jetbrains.rider.projectView.solutionExplorer.SolutionExplorerNodeRider" />
             </PATH_ELEMENT>
           </PATH>
@@ -423,12 +421,12 @@
       <updated>1517789512210</updated>
       <workItem from="1517789525718" duration="1144000" />
       <workItem from="1517839872399" duration="1483000" />
-      <workItem from="1517861617470" duration="3382000" />
+      <workItem from="1517861617470" duration="4242000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6009000" />
+    <option name="totallyTimeSpent" value="6869000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -440,7 +438,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1913" y="87" width="1587" height="1407" extended-state="0" />
+    <frame x="1913" y="87" width="2567" height="1407" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -451,7 +449,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25736737" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15676107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -675,10 +673,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Managers/BuildingManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1517869372118" expanded="true" signature="18:62" ph="{...}" />
+            <marker date="1517869372118" expanded="true" signature="51:60" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Buildings/Converter.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3060">
-          <caret line="180" column="48" lean-forward="false" selection-start-line="180" selection-start-column="48" selection-end-line="180" selection-end-column="48" />
+        <state relative-caret-position="408">
+          <caret line="24" column="51" lean-forward="false" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
           <folding>
             <marker date="1517869323712" expanded="true" signature="6:45" ph="..." />
             <marker date="1517869323712" expanded="true" signature="66:6023" ph="{...}" />
@@ -716,13 +725,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Managers/BuildingManager.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Util/SerializableEnum.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="204">
+          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
           <folding>
-            <marker date="1517869372118" expanded="true" signature="18:62" ph="{...}" />
-            <marker date="1517869372118" expanded="true" signature="51:60" ph="{...}" />
+            <marker date="1517870277526" expanded="true" signature="6:32" ph="..." />
+            <marker date="1517870277526" expanded="true" signature="48:381" ph="{...}" />
+            <marker date="1517870277526" expanded="true" signature="137:379" ph="{...}" />
+            <marker date="1517870277526" expanded="true" signature="166:265" ph="{...}" />
           </folding>
         </state>
       </provider>
