@@ -9,7 +9,7 @@ namespace Util
         public T Value
         {
             get { return _enumValue; }
-            set { _enumValue = value; }
+            set { _enumValue = value;  }
         }
 
         [SerializeField] private string _enumValueAsString;
