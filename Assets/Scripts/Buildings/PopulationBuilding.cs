@@ -3,18 +3,40 @@ using Enum;
 
 namespace Buildings
 {
-    public class Converter : BaseBuilding
+    public class PopulationBuilding : BaseBuilding
     {
-        public MetaResourceEnum MetaResourceEnum { get; private set; }
         public ResourceEnum ResourceEnum { get; private set; }
+        public int CurrentPopulation { get; private set; }
+        public double PopulationCapBase { get; private set; }
+        public double PopulationCapCurrent { get; private set; }
 
-        //Define them
-        public static readonly Converter SmokeHut = new Converter
+        public void SetLevels(int level, int currentPopulation)
         {
-            MetaResourceEnum = MetaResourceEnum.Food,
+            base.SetLevels(level);
+            CurrentPopulation = currentPopulation;
+            PopulationCapCurrent = PopulationCapBase * level;
+        }
+
+        public override bool BuyNextLevel(ref Dictionary<MetaResourceEnum, double> currentAmounts)
+        {
+            if (!base.BuyNextLevel(ref currentAmounts))
+            {
+                return false;
+            }
+            UpdatePopulationCap();
+            return true;
+        }
+
+        private void UpdatePopulationCap()
+        {
+            PopulationCapCurrent = PopulationCapBase * Level;
+        }
+
+        public static readonly PopulationBuilding Fishery = new PopulationBuilding
+        {
             ResourceEnum = ResourceEnum.Fish,
 
-            Name = "Smoke Hut",
+            Name = "Fishery",
             BaseRate = 1,
             BaseCost = new Dictionary<MetaResourceEnum, double>
             {
@@ -25,15 +47,15 @@ namespace Buildings
             {
                 {MetaResourceEnum.Food, .2},
                 {MetaResourceEnum.Production, .3}
-            }
+            },
+            PopulationCapBase = 10
         };
 
-        public static readonly Converter ButcherHut = new Converter
+        public static readonly PopulationBuilding HuntingLodge = new PopulationBuilding
         {
-            MetaResourceEnum = MetaResourceEnum.Food,
             ResourceEnum = ResourceEnum.Meat,
 
-            Name = "Butcher Hut",
+            Name = "Hunting Lodge",
             BaseRate = 1,
             BaseCost = new Dictionary<MetaResourceEnum, double>
             {
@@ -44,15 +66,15 @@ namespace Buildings
             {
                 {MetaResourceEnum.Food, .2},
                 {MetaResourceEnum.Production, .3}
-            }
+            },
+            PopulationCapBase = 10
         };
 
-        public static readonly Converter JuiceHut = new Converter
+        public static readonly PopulationBuilding GatheringHut = new PopulationBuilding
         {
-            MetaResourceEnum = MetaResourceEnum.Food,
             ResourceEnum = ResourceEnum.Berry,
 
-            Name = "Juice Hut",
+            Name = "Gathering Hut",
             BaseRate = 1,
             BaseCost = new Dictionary<MetaResourceEnum, double>
             {
@@ -63,15 +85,15 @@ namespace Buildings
             {
                 {MetaResourceEnum.Food, .2},
                 {MetaResourceEnum.Production, .3}
-            }
+            },
+            PopulationCapBase = 10
         };
 
-        public static readonly Converter LumberHut = new Converter
+        public static readonly PopulationBuilding LumberCamp = new PopulationBuilding
         {
-            MetaResourceEnum = MetaResourceEnum.Production,
             ResourceEnum = ResourceEnum.Wood,
 
-            Name = "Lumber Hut",
+            Name = "Lumber Camp",
             BaseRate = 1,
             BaseCost = new Dictionary<MetaResourceEnum, double>
             {
@@ -82,15 +104,15 @@ namespace Buildings
             {
                 {MetaResourceEnum.Food, .2},
                 {MetaResourceEnum.Production, .3}
-            }
+            },
+            PopulationCapBase = 10
         };
 
-        public static readonly Converter MasonHut = new Converter
+        public static readonly PopulationBuilding Quarry = new PopulationBuilding
         {
-            MetaResourceEnum = MetaResourceEnum.Production,
             ResourceEnum = ResourceEnum.Stone,
 
-            Name = "Mason Hut",
+            Name = "Quarry",
             BaseRate = 1,
             BaseCost = new Dictionary<MetaResourceEnum, double>
             {
@@ -101,15 +123,15 @@ namespace Buildings
             {
                 {MetaResourceEnum.Food, .2},
                 {MetaResourceEnum.Production, .3}
-            }
+            },
+            PopulationCapBase = 10
         };
 
-        public static readonly Converter KilnHut = new Converter
+        public static readonly PopulationBuilding ClayPit = new PopulationBuilding
         {
-            MetaResourceEnum = MetaResourceEnum.Production,
             ResourceEnum = ResourceEnum.Clay,
 
-            Name = "Kiln Hut",
+            Name = "Clay Pit",
             BaseRate = 1,
             BaseCost = new Dictionary<MetaResourceEnum, double>
             {
@@ -120,7 +142,8 @@ namespace Buildings
             {
                 {MetaResourceEnum.Food, .2},
                 {MetaResourceEnum.Production, .3}
-            }
+            },
+            PopulationCapBase = 10
         };
     }
 }
