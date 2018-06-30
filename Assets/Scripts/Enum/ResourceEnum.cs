@@ -2,6 +2,7 @@
 {
     public enum ResourceEnum
     {
+        None,
         Fish,
         Meat,
         Berry,
