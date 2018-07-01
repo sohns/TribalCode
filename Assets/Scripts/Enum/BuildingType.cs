@@ -5,6 +5,6 @@
         Converter,
         Storage,
         PopulationAssignment,
-        TownCenter
+        TownCenter 
     }
 }
