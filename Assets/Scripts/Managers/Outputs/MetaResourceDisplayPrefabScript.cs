@@ -1,15 +1,22 @@
-﻿using Enum;
+﻿using System;
+using TMPro;
+using UnityEngine;
 
 namespace Managers.Outputs
 {
-    public class MetaResourceDisplayPrefabScript : BaseResourceDiplayPrefabScript
+    public class MetaResourceDisplayPrefabScript : MonoBehaviour
     {
-        public MetaResourceEnum MetaResourceEnum;
+        public GameObject Value, Change;
 
-        public void SetValues(MetaResourceDisplayInfo resourceDisplayInfo)
+        public void SetValues(MetaResourceDisplayInfo metaResourceDisplayInfo)
         {
-            MetaResourceEnum = resourceDisplayInfo.MetaResourceEnum;
-            base.SetValues(resourceDisplayInfo);
+            SetValue(metaResourceDisplayInfo.Value, Value);
+            SetValue(metaResourceDisplayInfo.Change, Change);
+        }
+
+        private void SetValue(string value, GameObject toSet)
+        {
+            toSet.GetComponent<TextMeshProUGUI>().text = value;
         }
     }
 }

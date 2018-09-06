@@ -4,13 +4,12 @@ using UnityEngine;
 
 namespace Managers.Outputs
 {
-    public class BaseResourceDiplayPrefabScript : MonoBehaviour
+    public class BaseResourceDisplayPrefabScript : MonoBehaviour
     {
-        public GameObject Name, Value, Change;
+        public GameObject Value, Change;
 
         public void SetValues(BaseResourceDisplayInfo baseResourceDisplayInfo)
         {
-            SetValue(baseResourceDisplayInfo.Name, Name);
             SetValue(baseResourceDisplayInfo.Value, Value);
             SetValue(baseResourceDisplayInfo.Change, Change);
         }

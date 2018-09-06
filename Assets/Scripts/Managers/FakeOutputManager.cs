@@ -8,29 +8,31 @@ using UnityEngine;
 public class FakeOutputManager : MonoBehaviour
 {
     public static FakeOutputManager OutputManager;
+    public static FakeOutputManager MetaOutputManager;
+
     public GameObject ResourceDisplay, MetaResourceDisplay;
     public GameObject ResourceDisplayPrefab, MetaResourceDisplayPrefab;
 
     public void GenerateResource(List<ResourceDisplayInfo> resourceDisplayInfos)
     {
-        CleanObject<ResourceDisplayPrefabScript>(ResourceDisplay);
+        /*CleanObject<BaseResourceDisplayPrefabScript>(ResourceDisplay);
         foreach (var resourceDisplayInfo in resourceDisplayInfos)
         {
             var clone = CreateObject(ResourceDisplayPrefab, ResourceDisplay);
-            var script = clone.GetComponent<ResourceDisplayPrefabScript>();
+            var script = clone.GetComponent<BaseResourceDisplayPrefabScript>();
             script.SetValues(resourceDisplayInfo);
-        }
+        }*/
     }
 
-    public void GenerateMetaResource(List<MetaResourceDisplayInfo> resourceDisplayInfos)
+    public void GenerateMetaResource(List<ProductionResourceDisplayInfo> productionresourceDisplayInfos)
     {
-        CleanObject<MetaResourceDisplayPrefabScript>(MetaResourceDisplay);
-        foreach (var resourceDisplayInfo in resourceDisplayInfos)
+        /*CleanObject<MetaResourceDisplayPrefabScript>(MetaResourceDisplay);
+        foreach (var productionresourceDisplayInfo in productionresourceDisplayInfos)
         {
             var clone = CreateObject(MetaResourceDisplayPrefab, MetaResourceDisplay);
             var script = clone.GetComponent<MetaResourceDisplayPrefabScript>();
-            script.SetValues(resourceDisplayInfo);
-        }
+            script.SetValues(productionresourceDisplayInfo);
+        }*/
     }
 
     // Use this for initialization
@@ -63,21 +65,23 @@ public class FakeOutputManager : MonoBehaviour
     }
 
     public void DisplayAdvance(List<ResourceDisplayInfo> resourceDisplayInfos,
-        List<MetaResourceDisplayInfo> metaResourceDisplayInfos)
+        List<ProductionResourceDisplayInfo> productionResourceDisplayInfos)
     {
         var resourceMap =
             resourceDisplayInfos.ToDictionary(resourceDisplayInfo => resourceDisplayInfo.ResourceEnum);
         foreach (Transform childTransform in ResourceDisplay.transform)
         {
-            var script = childTransform.GetComponent<ResourceDisplayPrefabScript>();
-            script.SetValues(resourceMap[script.ResourceEnum]);
+            var script = childTransform.GetComponent<ResourceDisplayScript>();
+            //TODO:script.SetValues(resourceMap[script.ResourceEnum]);
         }
+
+
         var metaResourceMap =
-            metaResourceDisplayInfos.ToDictionary(resourceDisplayInfo => resourceDisplayInfo.MetaResourceEnum);
+            productionResourceDisplayInfos.ToDictionary(resourceDisplayInfo => resourceDisplayInfo.MetaResourceEnum);
         foreach (Transform childTransform in MetaResourceDisplay.transform)
         {
-            var script = childTransform.GetComponent<MetaResourceDisplayPrefabScript>();
-            script.SetValues(metaResourceMap[script.MetaResourceEnum]);
+            var script = childTransform.GetComponent<ProductionResourceDisplayScript>();
+            //TODO:script.SetValues(metaResourceMap[script.MetaResourceEnum]);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Managers
         {
             //Loading
             FakeOutputManager.OutputManager.GenerateResource(_resourceManager.GetResourceDisplayInfos());
-            FakeOutputManager.OutputManager.GenerateMetaResource(_resourceManager.GetMetaResourceDisplayInfos());
+            //TODO:FakeOutputManager.MetaOutputManager.GenerateMetaResource(_resourceManager.GetProductionResourceDisplayInfos());
             //Maintain
             while (true)
             {
@@ -32,7 +32,14 @@ namespace Managers
                 {
                     _resourceManager.Advance(Speed);
                     FakeOutputManager.OutputManager.DisplayAdvance(_resourceManager.GetResourceDisplayInfos(),
-                        _resourceManager.GetMetaResourceDisplayInfos());
+                        _resourceManager.GetProductionResourceDisplayInfos());
+
+                    _resourceManager.Advance(Speed);
+                    FakeOutputManager.OutputManager.DisplayAdvance(_resourceManager.GetResourceDisplayInfos(),
+                        _resourceManager.GetProductionResourceDisplayInfos());
+
+                    OutputManager.ThisOutputManager.UpdatedResources(_resourceManager.GetResourceDisplayInfos());
+                    MetaOutputManager.AnotherOutputManager.UpdatedResources(_resourceManager.GetProductionResourceDisplayInfos());
                 }
                 catch (Exception e)
                 {

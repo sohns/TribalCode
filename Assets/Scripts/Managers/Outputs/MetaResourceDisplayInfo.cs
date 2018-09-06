@@ -1,9 +1,9 @@
-﻿using Enum;
-
-namespace Managers.Outputs
+﻿namespace Managers.Outputs
 {
-    public class MetaResourceDisplayInfo : BaseResourceDisplayInfo
+    public class MetaResourceDisplayInfo
     {
-        public MetaResourceEnum MetaResourceEnum { get; set; }
+        public string Name { get; set; }
+        public string Value { get; set; }
+        public string Change { get; set; }
     }
 }

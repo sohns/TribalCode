@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 222498921428296592}
   - component: {fileID: 114860815595739526}
   - component: {fileID: 114826603441517742}
+  - component: {fileID: 114645220550095920}
   m_Layer: 5
   m_Name: ResourceDisplayPrefab
   m_TagString: Untagged
@@ -192,6 +193,19 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114645220550095920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1915790228832670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab7bd82776d40bb9380f427b46ccd65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Value: {fileID: 1736900435340320}
+  Change: {fileID: 1420983467852822}
 --- !u!114 &114674653621311432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -500,7 +514,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 260}
+  m_AnchoredPosition: {x: -2868.2532, y: 1849.4514}
   m_SizeDelta: {x: 370, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224569837638569056
