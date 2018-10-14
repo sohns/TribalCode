@@ -1276,11 +1276,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 320058277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee2b81aa481c3b1498366314038fe3d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 0828ef5350df7cb47b225ca66a125dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Value: {fileID: 1108767494}
-  Change: {fileID: 1324527588}
+  Value: {fileID: 476138897}
+  Change: {fileID: 348994931}
+  MetaResourceEnum: 1
 --- !u!1 &348994931
 GameObject:
   m_ObjectHideFlags: 0
@@ -4182,11 +4183,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1497056868}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee2b81aa481c3b1498366314038fe3d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 0828ef5350df7cb47b225ca66a125dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Value: {fileID: 476138897}
-  Change: {fileID: 1972759260}
+  Value: {fileID: 2011885482}
+  Change: {fileID: 1856677119}
+  MetaResourceEnum: 2
 --- !u!1 &1534571257
 GameObject:
   m_ObjectHideFlags: 0
