@@ -5,5 +5,6 @@
         SaveInfo Save(SaveInfo saveInfo);
         void Load(SaveInfo saveInfo);
         void InitialSetup();
+        void PostLoad();
     }
 }

@@ -9,7 +9,7 @@ namespace Managers.Outputs
 
         private void Start()
         {
-            MetaOutputManager.AnotherOutputManager.ResourceRegistration(MetaResourceEnum, gameObject);
+            OutputManager.ThisManager.MetaResourceRegistration(MetaResourceEnum, gameObject);
         }
         public void SetValues(MetaResourceDisplayInfo productionresourceDisplayInfo)
         {

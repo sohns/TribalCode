@@ -10,7 +10,7 @@ namespace Managers.Outputs
 
         private void Start()
         {
-            OutputManager.ThisOutputManager.ResourceRegistration(ResourceEnum,gameObject);
+            OutputManager.ThisManager.ResourceRegistration(ResourceEnum,gameObject);
         }
         public void SetValues(ResourceDisplayInfo resourceDisplayInfo)
         {

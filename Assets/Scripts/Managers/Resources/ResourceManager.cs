@@ -5,13 +5,13 @@ using Enum;
 using Managers.Meta;
 using Managers.Outputs;
 using UnityEngine;
-using Util;
-using Random = UnityEngine.Random;
 
 namespace Managers.Resources
 {
-    public class ResourceManager : IManager
+    public class ResourceManager : MonoBehaviour, IManager
     {
+        public static ResourceManager ThisManager;
+
         //TODO define Hash
         private Dictionary<String, ResourceInfo> Resources { get; set; }
 
@@ -22,34 +22,27 @@ namespace Managers.Resources
 
         public void Load(SaveInfo saveInfo)
         {
-            //TODO: Load this from save
-            temp(MetaResourceEnum.Food);
-            temp(MetaResourceEnum.Production);
-            temp(MetaResourceEnum.Population);
-
-            temp(ResourceEnum.Fish);
-            temp(ResourceEnum.Meat);
-            temp(ResourceEnum.Berry);
-            temp(ResourceEnum.Wood);
-            temp(ResourceEnum.Stone);
-            temp(ResourceEnum.Clay);
-        }
-
-        private void temp(MetaResourceEnum temp)
-        {
-            var resourceInfo = new ResourceInfo(temp, 0, 100, 0, Random.value);
-            Resources.Add(temp.ToString(), resourceInfo);
-        }
-
-        private void temp(ResourceEnum temp)
-        {
-            var resourceInfo = new ResourceInfo(temp, 0, 100, 0, Random.value);
-            Resources.Add(temp.ToString(), resourceInfo);
+            Resources = new Dictionary<string, ResourceInfo>();
+            foreach (var info in saveInfo.ResourcesCount)
+            {
+                var resourceInfo = new ResourceInfo(info.Key, info.Value, 100, 0, saveInfo.ResourcesRate[info.Key]);
+                Resources.Add(info.Key.ToString(), resourceInfo);
+            }
+            foreach (var info in saveInfo.MetaResourcesCount)
+            {
+                var resourceInfo = new ResourceInfo(info.Key, info.Value, 100, 0, saveInfo.MetaResourcesRate[info.Key]);
+                Resources.Add(info.Key.ToString(), resourceInfo);
+            }
         }
 
         public void InitialSetup()
         {
-            Resources = new Dictionary<string, ResourceInfo>();
+            ThisManager = this;
+        }
+
+        public void PostLoad()
+        {
+            
         }
 
 
