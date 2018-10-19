@@ -11,7 +11,7 @@ namespace Managers
 
         private Dictionary<MetaResourceEnum, GameObject> _resourceDictionary = new Dictionary<MetaResourceEnum, GameObject>();
 
-        public void UpdatedResources(List<ProductionResourceDisplayInfo> productionresourceDisplayInfos)
+        public void UpdatedResources(List<MetaResourceDisplayInfo> productionresourceDisplayInfos)
         {
             foreach (var productionresourceDisplayInfo in productionresourceDisplayInfos)
             {
@@ -20,7 +20,7 @@ namespace Managers
                     continue;
                 }
 
-                var singularResourceScript = _resourceDictionary[productionresourceDisplayInfo.MetaResourceEnum].GetComponent<ProductionResourceDisplayScript>();
+                var singularResourceScript = _resourceDictionary[productionresourceDisplayInfo.MetaResourceEnum].GetComponent<MetaResourceDisplayScript>();
                 singularResourceScript.SetValues(productionresourceDisplayInfo);
             }
         }

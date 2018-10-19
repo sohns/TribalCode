@@ -23,21 +23,12 @@ namespace Managers
         private IEnumerator Process()
         {
             //Loading
-            FakeOutputManager.OutputManager.GenerateResource(_resourceManager.GetResourceDisplayInfos());
-            //TODO:FakeOutputManager.MetaOutputManager.GenerateMetaResource(_resourceManager.GetProductionResourceDisplayInfos());
             //Maintain
             while (true)
             {
                 try
                 {
                     _resourceManager.Advance(Speed);
-                    FakeOutputManager.OutputManager.DisplayAdvance(_resourceManager.GetResourceDisplayInfos(),
-                        _resourceManager.GetProductionResourceDisplayInfos());
-
-                    _resourceManager.Advance(Speed);
-                    FakeOutputManager.OutputManager.DisplayAdvance(_resourceManager.GetResourceDisplayInfos(),
-                        _resourceManager.GetProductionResourceDisplayInfos());
-
                     OutputManager.ThisOutputManager.UpdatedResources(_resourceManager.GetResourceDisplayInfos());
                     MetaOutputManager.AnotherOutputManager.UpdatedResources(_resourceManager.GetProductionResourceDisplayInfos());
                 }

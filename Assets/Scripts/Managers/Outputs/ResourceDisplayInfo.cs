@@ -4,6 +4,6 @@ namespace Managers.Outputs
 {
     public class ResourceDisplayInfo : BaseResourceDisplayInfo
     {
-        public ResourceEnum ResourceEnum { get; set; }
+        public ResourceEnum ResourceEnum { get; set; }  
     }
 }

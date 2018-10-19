@@ -1,18 +1,24 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using Enum;
+using System;
 
-public class MetaResourceDisplayScript : MonoBehaviour
+namespace Managers.Outputs
 {
-
-    // Use this for initialization
-    void Start()
+    public class MetaResourceDisplayScript : BaseMetaResourceDisplayScript
     {
+        public MetaResourceEnum MetaResourceEnum;
 
-    }
+        private void Start()
+        {
+            MetaOutputManager.AnotherOutputManager.ResourceRegistration(MetaResourceEnum, gameObject);
+        }
+        public void SetValues(MetaResourceDisplayInfo productionresourceDisplayInfo)
+        {
+            if (productionresourceDisplayInfo.MetaResourceEnum != MetaResourceEnum)
+            {
+                throw new ArgumentException("using the wrong production resource enum:" + productionresourceDisplayInfo.MetaResourceEnum + "correct production resource enum:" + MetaResourceEnum);
+            }
 
-    // Update is called once per frame
-    void Update()
-    {
-
+            base.SetValues(productionresourceDisplayInfo);
+        }
     }
 }

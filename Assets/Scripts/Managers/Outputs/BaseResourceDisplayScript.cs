@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Managers.Outputs
 {
-    public class BaseResourceDisplayPrefabScript : MonoBehaviour
+    public class BaseResourceDisplayScript : MonoBehaviour
     {
         public GameObject Value, Change;
 

@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace Managers.Outputs
 {
-    public class MetaResourceDisplayPrefabScript : MonoBehaviour
+    public class BaseMetaResourceDisplayScript : MonoBehaviour
     {
         public GameObject Value, Change;
 
-        public void SetValues(MetaResourceDisplayInfo metaResourceDisplayInfo)
+        public void SetValues(BaseMetaResourceDisplayInfo baseMetaResourceDisplayInfo)
         {
-            SetValue(metaResourceDisplayInfo.Value, Value);
-            SetValue(metaResourceDisplayInfo.Change, Change);
+            SetValue(baseMetaResourceDisplayInfo.Value, Value);
+            SetValue(baseMetaResourceDisplayInfo.Change, Change);
         }
 
         private void SetValue(string value, GameObject toSet)

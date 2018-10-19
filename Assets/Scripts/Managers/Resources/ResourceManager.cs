@@ -74,12 +74,12 @@ namespace Managers.Resources
                 }).ToList();
         }
 
-        public List<ProductionResourceDisplayInfo> GetProductionResourceDisplayInfos()
+        public List<MetaResourceDisplayInfo> GetProductionResourceDisplayInfos()
         {
             return (from resource in Resources
                 where resource.Value.MetaResourceEnum != MetaResourceEnum.None
                       && resource.Value.MetaResourceEnum != MetaResourceEnum.Population
-                select new ProductionResourceDisplayInfo
+                select new MetaResourceDisplayInfo
                 {
                     Change = String.Format("{0:F2}", resource.Value.ChangeValue.ThisNumber),
                     Name = resource.Value.MetaResourceEnum.ToString(),

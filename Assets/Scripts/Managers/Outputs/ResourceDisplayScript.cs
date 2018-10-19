@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Managers.Outputs
 {
-    public class ResourceDisplayScript : BaseResourceDisplayPrefabScript
+    public class ResourceDisplayScript : BaseResourceDisplayScript
     {
         public ResourceEnum ResourceEnum;
 
