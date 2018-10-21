@@ -1,4 +1,4 @@
-﻿namespace Managers.Buildings
+﻿namespace Enum
 {
     public enum BuildingEnum
     {

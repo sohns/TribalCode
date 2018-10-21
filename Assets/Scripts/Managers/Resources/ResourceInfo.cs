@@ -1,5 +1,5 @@
-﻿using Enum;
-using Util;
+﻿using CustomClasses;
+using Enum;
 
 namespace Managers.Resources
 {
@@ -37,6 +37,12 @@ namespace Managers.Resources
         public void Advance(float speed)
         {
             Value += ChangeValue * speed;
+            Value.Bound(MinValue, MaxValue);
+        }
+
+        public void Pay(AdvancedNumber toPay)
+        {
+            Value -= toPay;
             Value.Bound(MinValue, MaxValue);
         }
     }

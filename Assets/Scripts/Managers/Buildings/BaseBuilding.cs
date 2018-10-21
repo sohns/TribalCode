@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
+using CustomClasses;
 using Enum;
-using Util;
+using Managers.Resources;
+using UnityEngine;
 
 namespace Managers.Buildings
 {
     public class BaseBuilding
     {
         public string Name { get; protected set; }
-        public int Level { get; protected set; }
+        public AdvancedNumber Level { get; protected set; }
         public AdvancedNumber BaseRate { get; protected set; }
         public AdvancedNumber CurrentRate { get; protected set; }
         public BuildingType BuildingType { get; protected set; }
@@ -15,7 +17,7 @@ namespace Managers.Buildings
         public Dictionary<MetaResourceEnum, AdvancedNumber> CostIncrease { get; protected set; }
         public Dictionary<MetaResourceEnum, AdvancedNumber> CurrentCost { get; protected set; }
 
-        public virtual void SetLevels(int level)
+        public virtual void SetLevels(AdvancedNumber level)
         {
             Level = level;
             CurrentRate = BaseRate;
@@ -28,31 +30,33 @@ namespace Managers.Buildings
             UpdateRate();
         }
 
-        public virtual bool BuyNextLevel(ref Dictionary<MetaResourceEnum, AdvancedNumber> currentAmounts)
+        public virtual bool BuyNextLevel()
         {
+            var currentAmounts = ResourceManager.ThisManager.MetaResources;
             foreach (var costInfo in CurrentCost)
             {
                 if (!currentAmounts.ContainsKey(costInfo.Key))
                 {
                     return false;
                 }
-                if (currentAmounts[costInfo.Key] < costInfo.Value)
+                if (currentAmounts[costInfo.Key].Value < costInfo.Value)
                 {
                     return false;
                 }
             }
-            PayForNextLevel(ref currentAmounts);
+            foreach (var costInfo in CurrentCost)
+            {
+                currentAmounts[costInfo.Key].Pay(costInfo.Value);
+            }
             UpdateRate();
             UpdateCost();
+            Level++;
+            ResourceManager.ThisManager.MetaResources = currentAmounts;
             return true;
         }
 
         protected virtual void PayForNextLevel(ref Dictionary<MetaResourceEnum, AdvancedNumber> currentAmounts)
         {
-            foreach (var costInfo in CurrentCost)
-            {
-                currentAmounts[costInfo.Key] -= costInfo.Value;
-            }
         }
 
         protected virtual void UpdateRate()
@@ -62,7 +66,8 @@ namespace Managers.Buildings
 
         protected virtual void UpdateCost()
         {
-            foreach (var costKey in CurrentCost.Keys)
+            var keys = new List<MetaResourceEnum>(CurrentCost.Keys);
+            foreach (var costKey in keys)
             {
                 CurrentCost[costKey] *= 1 + CostIncrease[costKey];
             }

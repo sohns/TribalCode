@@ -6,5 +6,6 @@
         void Load(SaveInfo saveInfo);
         void InitialSetup();
         void PostLoad();
+        void Advance(float speed);
     }
 }

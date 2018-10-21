@@ -1,8 +1,7 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
-namespace Managers.Outputs
+namespace Managers.Outputs.Resource
 {
     public class BaseResourceDisplayScript : MonoBehaviour
     {

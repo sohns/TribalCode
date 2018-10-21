@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Enum;
 using Managers.Meta;
-using Managers.Outputs;
+using Managers.Outputs.MetaResource;
+using Managers.Outputs.Resource;
 using UnityEngine;
 
 namespace Managers.Resources
@@ -13,7 +14,8 @@ namespace Managers.Resources
         public static ResourceManager ThisManager;
 
         //TODO define Hash
-        private Dictionary<String, ResourceInfo> Resources { get; set; }
+        public Dictionary<ResourceEnum, ResourceInfo> Resources { get; set; }
+        public Dictionary<MetaResourceEnum, ResourceInfo> MetaResources { get; set; }
 
         public SaveInfo Save(SaveInfo saveInfo)
         {
@@ -22,16 +24,17 @@ namespace Managers.Resources
 
         public void Load(SaveInfo saveInfo)
         {
-            Resources = new Dictionary<string, ResourceInfo>();
+            Resources = new Dictionary<ResourceEnum, ResourceInfo>();
+            MetaResources = new Dictionary<MetaResourceEnum, ResourceInfo>();
             foreach (var info in saveInfo.ResourcesCount)
             {
                 var resourceInfo = new ResourceInfo(info.Key, info.Value, 100, 0, saveInfo.ResourcesRate[info.Key]);
-                Resources.Add(info.Key.ToString(), resourceInfo);
+                Resources.Add(info.Key, resourceInfo);
             }
             foreach (var info in saveInfo.MetaResourcesCount)
             {
                 var resourceInfo = new ResourceInfo(info.Key, info.Value, 100, 0, saveInfo.MetaResourcesRate[info.Key]);
-                Resources.Add(info.Key.ToString(), resourceInfo);
+                MetaResources.Add(info.Key, resourceInfo);
             }
         }
 
@@ -52,6 +55,10 @@ namespace Managers.Resources
             {
                 resource.Value.Advance(speed);
             }
+            foreach (var resource in MetaResources)
+            {
+                resource.Value.Advance(speed);
+            }
         }
 
         public List<ResourceDisplayInfo> GetResourceDisplayInfos()
@@ -69,7 +76,7 @@ namespace Managers.Resources
 
         public List<MetaResourceDisplayInfo> GetProductionResourceDisplayInfos()
         {
-            return (from resource in Resources
+            return (from resource in MetaResources
                 where resource.Value.MetaResourceEnum != MetaResourceEnum.None
                       && resource.Value.MetaResourceEnum != MetaResourceEnum.Population
                 select new MetaResourceDisplayInfo

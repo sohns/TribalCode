@@ -1,13 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using CustomClasses;
 using Enum;
-using Util;
+using UnityEngine;
 
 namespace Managers.Buildings
 {
     public class PopulationAssignmentBuildings : BaseBuilding
     {
         public ResourceEnum ResourceEnum { get; private set; }
-        public int CurrentPopulation { get; private set; }
+        public AdvancedNumber CurrentPopulation { get; private set; }
         public AdvancedNumber PopulationCapBase { get; private set; }
         public AdvancedNumber PopulationCapCurrent { get; private set; }
 
@@ -16,16 +18,17 @@ namespace Managers.Buildings
             BuildingType = BuildingType.PopulationAssignment;
         }
 
-        public void SetLevels(int level, int currentPopulation)
+        public void SetLevels(AdvancedNumber level, AdvancedNumber currentPopulation)
         {
             base.SetLevels(level);
             CurrentPopulation = currentPopulation;
             PopulationCapCurrent = PopulationCapBase * level;
+            SetRate();
         }
 
-        public override bool BuyNextLevel(ref Dictionary<MetaResourceEnum, AdvancedNumber> currentAmounts)
+        public override bool BuyNextLevel()
         {
-            if (!base.BuyNextLevel(ref currentAmounts))
+            if (!base.BuyNextLevel())
             {
                 return false;
             }
@@ -38,6 +41,30 @@ namespace Managers.Buildings
             PopulationCapCurrent = PopulationCapBase * Level;
         }
 
+        public override void SetLevels(AdvancedNumber level)
+        {
+            throw new NotImplementedException();
+        }
+
+        public AdvancedNumber AddPopulation(AdvancedNumber popToAdd)
+        {
+            var newPopulation = CurrentPopulation + popToAdd;
+            if (newPopulation > PopulationCapCurrent)
+            {
+                CurrentPopulation = PopulationCapCurrent;
+                SetRate();
+                return newPopulation - PopulationCapCurrent;
+            }
+            CurrentPopulation = newPopulation;
+            SetRate();
+            return 0;
+        }
+
+        private void SetRate()
+        {
+            CurrentRate = BaseRate * CurrentPopulation;
+        }
+
         public static readonly PopulationAssignmentBuildings Fishery = new PopulationAssignmentBuildings
         {
             ResourceEnum = ResourceEnum.Fish,
@@ -46,8 +73,8 @@ namespace Managers.Buildings
             BaseRate = 1,
             BaseCost = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
-                {MetaResourceEnum.Food, 50},
-                {MetaResourceEnum.Production, 100}
+                {MetaResourceEnum.Food, 5},
+                {MetaResourceEnum.Production, 10}
             },
             CostIncrease = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
@@ -65,8 +92,8 @@ namespace Managers.Buildings
             BaseRate = 1,
             BaseCost = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
-                {MetaResourceEnum.Food, 50},
-                {MetaResourceEnum.Production, 100}
+                {MetaResourceEnum.Food, 5},
+                {MetaResourceEnum.Production, 10}
             },
             CostIncrease = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
@@ -84,8 +111,8 @@ namespace Managers.Buildings
             BaseRate = 1,
             BaseCost = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
-                {MetaResourceEnum.Food, 50},
-                {MetaResourceEnum.Production, 100}
+                {MetaResourceEnum.Food, 5},
+                {MetaResourceEnum.Production, 10}
             },
             CostIncrease = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
@@ -103,8 +130,8 @@ namespace Managers.Buildings
             BaseRate = 1,
             BaseCost = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
-                {MetaResourceEnum.Food, 50},
-                {MetaResourceEnum.Production, 100}
+                {MetaResourceEnum.Food, 5},
+                {MetaResourceEnum.Production, 10}
             },
             CostIncrease = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
@@ -122,8 +149,8 @@ namespace Managers.Buildings
             BaseRate = 1,
             BaseCost = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
-                {MetaResourceEnum.Food, 50},
-                {MetaResourceEnum.Production, 100}
+                {MetaResourceEnum.Food, 5},
+                {MetaResourceEnum.Production, 10}
             },
             CostIncrease = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
@@ -141,8 +168,8 @@ namespace Managers.Buildings
             BaseRate = 1,
             BaseCost = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
-                {MetaResourceEnum.Food, 50},
-                {MetaResourceEnum.Production, 100}
+                {MetaResourceEnum.Food, 5},
+                {MetaResourceEnum.Production, 10}
             },
             CostIncrease = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {

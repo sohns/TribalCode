@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using CustomClasses;
 using Enum;
-using Util;
+using UnityEngine;
 
 namespace Managers.Buildings
 {
@@ -8,10 +10,28 @@ namespace Managers.Buildings
     {
         public MetaResourceEnum MetaResourceEnum { get; protected set; }
         public ResourceType ResourceType { get; protected set; }
+        public AdvancedNumber BaseStorage { get; protected set; }
+        public AdvancedNumber CurrentStorage { get; protected set; }
 
         public StorageBuilding()
         {
             BuildingType = BuildingType.Storage;
+        }
+
+        public override void SetLevels(AdvancedNumber level)
+        {
+            base.SetLevels(level);
+            CurrentStorage = BaseStorage * level;
+        }
+
+        public override bool BuyNextLevel()
+        {
+            if (base.BuyNextLevel())
+            {
+                CurrentStorage = BaseStorage * Level;
+                return true;
+            }
+            return false;
         }
 
         public static readonly StorageBuilding BasketYard = new StorageBuilding
@@ -21,10 +41,11 @@ namespace Managers.Buildings
 
             Name = "Basket Yard",
             BaseRate = 1,
+            BaseStorage = 10,
             BaseCost = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
-                {MetaResourceEnum.Food, 50},
-                {MetaResourceEnum.Production, 100}
+                {MetaResourceEnum.Food, 5},
+                {MetaResourceEnum.Production, 10}
             },
             CostIncrease = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
@@ -40,10 +61,11 @@ namespace Managers.Buildings
 
             Name = "Storage Yard",
             BaseRate = 1,
+            BaseStorage = 10,
             BaseCost = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
-                {MetaResourceEnum.Food, 50},
-                {MetaResourceEnum.Production, 100}
+                {MetaResourceEnum.Food, 5},
+                {MetaResourceEnum.Production, 10}
             },
             CostIncrease = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
@@ -59,10 +81,11 @@ namespace Managers.Buildings
 
             Name = "Granary",
             BaseRate = 1,
+            BaseStorage = 10,
             BaseCost = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
-                {MetaResourceEnum.Food, 50},
-                {MetaResourceEnum.Production, 100}
+                {MetaResourceEnum.Food, 5},
+                {MetaResourceEnum.Production, 10}
             },
             CostIncrease = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
@@ -78,10 +101,11 @@ namespace Managers.Buildings
 
             Name = "Storage Pit",
             BaseRate = 1,
+            BaseStorage = 10,
             BaseCost = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
-                {MetaResourceEnum.Food, 50},
-                {MetaResourceEnum.Production, 100}
+                {MetaResourceEnum.Food, 5},
+                {MetaResourceEnum.Production, 10}
             },
             CostIncrease = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {

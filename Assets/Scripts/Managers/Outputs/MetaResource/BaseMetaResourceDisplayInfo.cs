@@ -1,4 +1,4 @@
-﻿namespace Managers.Outputs
+﻿namespace Managers.Outputs.MetaResource
 {
     public class BaseMetaResourceDisplayInfo
     {

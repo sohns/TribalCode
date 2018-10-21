@@ -1,8 +1,7 @@
-﻿using Enum;
-using System;
-using UnityEngine;
+﻿using System;
+using Enum;
 
-namespace Managers.Outputs
+namespace Managers.Outputs.Resource
 {
     public class ResourceDisplayScript : BaseResourceDisplayScript
     {

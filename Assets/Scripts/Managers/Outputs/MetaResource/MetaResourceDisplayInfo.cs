@@ -1,6 +1,6 @@
 ﻿using Enum;
 
-namespace Managers.Outputs
+namespace Managers.Outputs.MetaResource
 {
     public class MetaResourceDisplayInfo : BaseMetaResourceDisplayInfo
     {

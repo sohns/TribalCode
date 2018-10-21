@@ -1,7 +1,7 @@
-﻿using Enum;
-using System;
+﻿using System;
+using Enum;
 
-namespace Managers.Outputs
+namespace Managers.Outputs.MetaResource
 {
     public class MetaResourceDisplayScript : BaseMetaResourceDisplayScript
     {

@@ -1,20 +1,55 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
 using Enum;
-using System.Collections.Generic;
+using Managers.Buildings;
 using Managers.Meta;
-using Managers.Outputs;
+using Managers.Outputs.Building;
+using Managers.Outputs.MetaResource;
+using Managers.Outputs.Resource;
+using Managers.Resources;
+using UnityEngine;
 
-namespace Managers
+namespace Managers.Outputs
 {
     public class OutputManager : MonoBehaviour, IManager
     {
         public static OutputManager ThisManager;
 
-        private Dictionary<ResourceEnum, GameObject> _resourceDictionary = new Dictionary<ResourceEnum, GameObject>();
-        private Dictionary<MetaResourceEnum, GameObject> _metaResourceDictionary = new Dictionary<MetaResourceEnum, GameObject>();
+        private readonly Dictionary<ResourceEnum, GameObject> _resourceDictionary =
+            new Dictionary<ResourceEnum, GameObject>();
 
-        public void UpdatedMetaResources(List<MetaResourceDisplayInfo> productionresourceDisplayInfos)
+        private readonly Dictionary<MetaResourceEnum, GameObject> _metaResourceDictionary =
+            new Dictionary<MetaResourceEnum, GameObject>();
+
+        private readonly Dictionary<BuildingEnum, GameObject> _buildingDictionary =
+            new Dictionary<BuildingEnum, GameObject>();
+
+        public void Advance(float speed)
         {
+            UpdatedMetaResources();
+            UpdatedResources();
+            UpdateBuildings();
+        }
+
+        private void UpdateBuildings()
+        {
+            var infos = BuildingManager.ThisManager.GetBuildingInfo();
+            foreach (var info in infos)
+            {
+                if (!_buildingDictionary.ContainsKey(info.BuildingEnum))
+                {
+                    continue;
+                }
+
+                var singularResourceScript = _buildingDictionary[info.BuildingEnum]
+                    .GetComponent<BaseBuildingDisplayScript>();
+                singularResourceScript.SetValues(info);
+            }
+        }
+
+        private void UpdatedMetaResources()
+        {
+            var productionresourceDisplayInfos = ResourceManager.ThisManager
+                .GetProductionResourceDisplayInfos();
             foreach (var productionresourceDisplayInfo in productionresourceDisplayInfos)
             {
                 if (!_metaResourceDictionary.ContainsKey(productionresourceDisplayInfo.MetaResourceEnum))
@@ -28,8 +63,10 @@ namespace Managers
             }
         }
 
-        public void UpdatedResources(List<ResourceDisplayInfo> resourceDisplayInfos)
+        private void UpdatedResources()
         {
+            var resourceDisplayInfos = ResourceManager.ThisManager
+                .GetResourceDisplayInfos();
             foreach (var resourceDisplayInfo in resourceDisplayInfos)
             {
                 if (!_resourceDictionary.ContainsKey(resourceDisplayInfo.ResourceEnum))
@@ -47,10 +84,15 @@ namespace Managers
         {
             _resourceDictionary.Add(resourceEnum, registrationGameObject);
         }
-        
+
         public void MetaResourceRegistration(MetaResourceEnum metaresourceEnum, GameObject registrationGameObject)
         {
             _metaResourceDictionary.Add(metaresourceEnum, registrationGameObject);
+        }
+
+        public void BuildingRegistration(BuildingEnum buildingEnum, GameObject registrationGameObject)
+        {
+            _buildingDictionary.Add(buildingEnum, registrationGameObject);
         }
 
         public SaveInfo Save(SaveInfo saveInfo)
@@ -69,7 +111,6 @@ namespace Managers
 
         public void PostLoad()
         {
-            
         }
     }
 }

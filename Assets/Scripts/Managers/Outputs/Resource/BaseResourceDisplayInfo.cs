@@ -1,4 +1,4 @@
-﻿namespace Managers.Outputs
+﻿namespace Managers.Outputs.Resource
 {
     public class BaseResourceDisplayInfo
     {

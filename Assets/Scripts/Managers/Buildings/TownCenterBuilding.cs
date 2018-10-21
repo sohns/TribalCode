@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using CustomClasses;
 using Enum;
-using Util;
 
 namespace Managers.Buildings
 {
@@ -13,13 +13,13 @@ namespace Managers.Buildings
             BuildingType = BuildingType.TownCenter;
         }
 
-        public override bool BuyNextLevel(ref Dictionary<MetaResourceEnum, AdvancedNumber> currentAmounts)
+        public override bool BuyNextLevel()
         {
             //Cannot Level ATM
             return false;
         }
 
-        public override void SetLevels(int level)
+        public override void SetLevels(AdvancedNumber level)
         {
             //Cannot Set Level
             base.SetLevels(level);
@@ -32,8 +32,8 @@ namespace Managers.Buildings
             BaseRate = .1,
             BaseCost = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
-                {MetaResourceEnum.Food, 50},
-                {MetaResourceEnum.Production, 100}
+                {MetaResourceEnum.Food, 5},
+                {MetaResourceEnum.Production, 10}
             },
             CostIncrease = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {

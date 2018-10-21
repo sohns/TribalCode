@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using CustomClasses;
 using Enum;
 using Managers.Buildings;
 using Managers.Meta;
+using Managers.Outputs;
 using Managers.Resources;
 using UnityEngine;
-using Util;
 using Random = UnityEngine.Random;
 
 namespace Managers
 {
     public class PrimaryManager : MonoBehaviour
     {
-        private const float Speed = .01f;
+        private const float Speed = .1f;
 
         private List<IManager> _managers = new List<IManager>();
 
-        private void Start()
+        private void Awake()
         {
             SetupManager<BuildingManager>();
             SetupManager<ResourceManager>();
@@ -37,32 +38,59 @@ namespace Managers
             var metaResourcesCount = new Dictionary<MetaResourceEnum, AdvancedNumber>();
             var metaResourcesRate = new Dictionary<MetaResourceEnum, AdvancedNumber>();
 
-            Temp(MetaResourceEnum.Food, metaResourcesCount, metaResourcesRate);
-            Temp(MetaResourceEnum.Production, metaResourcesCount, metaResourcesRate);
-            Temp(MetaResourceEnum.Population, metaResourcesCount, metaResourcesRate);
+            SetFakeData<MetaResourceEnum, Dictionary<MetaResourceEnum, AdvancedNumber>,
+                Dictionary<MetaResourceEnum, AdvancedNumber>>(TempMeta, metaResourcesCount, metaResourcesRate);
 
-            Temp(ResourceEnum.Fish, resourcesCount, resourcesRate);
-            Temp(ResourceEnum.Meat, resourcesCount, resourcesRate);
-            Temp(ResourceEnum.Berry, resourcesCount, resourcesRate);
-            Temp(ResourceEnum.Wood, resourcesCount, resourcesRate);
-            Temp(ResourceEnum.Stone, resourcesCount, resourcesRate);
-            Temp(ResourceEnum.Clay, resourcesCount, resourcesRate);
+            SetFakeData<ResourceEnum, Dictionary<ResourceEnum, AdvancedNumber>,
+                Dictionary<ResourceEnum, AdvancedNumber>>(TempResource, resourcesCount, resourcesRate);
+
+
+            var building = new Dictionary<BuildingEnum, AdvancedNumber>();
+            var useless = new Dictionary<BuildingEnum, AdvancedNumber>();
+
+            SetFakeData<BuildingEnum, Dictionary<BuildingEnum, AdvancedNumber>,
+                Dictionary<BuildingEnum, AdvancedNumber>>(TempBuilding, building, useless);
+
+            saveInfo.Buildings = building;
             saveInfo.ResourcesCount = resourcesCount;
             saveInfo.ResourcesRate = resourcesRate;
             saveInfo.MetaResourcesCount = metaResourcesCount;
-            saveInfo.MetaResourcesRate = metaResourcesRate;
+            saveInfo.MetaResourcesRate = metaResourcesRate;            
             return saveInfo;
         }
 
-        private void Temp<T>(MetaResourceEnum temp, T count, T rate)
+        private void SetFakeData<TP, TS, TQ>(Action<TP, TS, TQ> action, TS s, TQ q)
+        {
+            foreach (var aEnum in (TP[]) System.Enum.GetValues(typeof(TP)))
+            {
+                action(aEnum, s, q);
+            }
+        }
+
+        private void TempBuilding<T>(BuildingEnum temp, T count, T useless)
+            where T : Dictionary<BuildingEnum, AdvancedNumber>
+        {
+            count.Add(temp, 1);
+        }
+
+        private void TempMeta<T>(MetaResourceEnum temp, T count, T rate)
             where T : Dictionary<MetaResourceEnum, AdvancedNumber>
         {
+            if (temp == MetaResourceEnum.None)
+            {
+                return;
+            }
             count.Add(temp, 0);
             rate.Add(temp, Random.value);
         }
 
-        private void Temp<T>(ResourceEnum temp, T count, T rate) where T : Dictionary<ResourceEnum, AdvancedNumber>
+        private void TempResource<T>(ResourceEnum temp, T count, T rate)
+            where T : Dictionary<ResourceEnum, AdvancedNumber>
         {
+            if (temp == ResourceEnum.None)
+            {
+                return;
+            }
             count.Add(temp, 0);
             rate.Add(temp, Random.value);
         }
@@ -92,11 +120,10 @@ namespace Managers
             {
                 try
                 {
-                    ResourceManager.ThisManager.Advance(Speed);
-                    OutputManager.ThisManager.UpdatedResources(ResourceManager.ThisManager
-                        .GetResourceDisplayInfos());
-                    OutputManager.ThisManager.UpdatedMetaResources(ResourceManager.ThisManager
-                        .GetProductionResourceDisplayInfos());
+                    foreach (var manager in _managers)
+                    {
+                        manager.Advance(Speed);
+                    }                
                 }
                 catch (Exception e)
                 {

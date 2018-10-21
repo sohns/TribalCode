@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Util
+namespace CustomClasses
 {
     [Serializable]
     public class SerializableEnum<T> where T : struct, IConvertible

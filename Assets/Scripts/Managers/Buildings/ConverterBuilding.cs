@@ -1,21 +1,21 @@
 ﻿using System.Collections.Generic;
+using CustomClasses;
 using Enum;
-using Util;
 
 namespace Managers.Buildings
 {
-    public class Converter : BaseBuilding
+    public class ConverterBuilding : BaseBuilding
     {
         public MetaResourceEnum MetaResourceEnum { get; private set; }
         public ResourceEnum ResourceEnum { get; private set; }
 
-        public Converter()
+        public ConverterBuilding()
         {
             BuildingType = BuildingType.Converter;
         }
-
+        
         //Define them
-        public static readonly Converter SmokeHut = new Converter
+        public static readonly ConverterBuilding SmokeHut = new ConverterBuilding
         {
             MetaResourceEnum = MetaResourceEnum.Food,
             ResourceEnum = ResourceEnum.Fish,
@@ -24,8 +24,8 @@ namespace Managers.Buildings
             BaseRate = 1,
             BaseCost = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
-                {MetaResourceEnum.Food, 50},
-                {MetaResourceEnum.Production, 100}
+                {MetaResourceEnum.Food, 5},
+                {MetaResourceEnum.Production, 10}
             },
             CostIncrease = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
@@ -34,7 +34,7 @@ namespace Managers.Buildings
             }
         };
 
-        public static readonly Converter ButcherHut = new Converter
+        public static readonly ConverterBuilding ButcherHut = new ConverterBuilding
         {
             MetaResourceEnum = MetaResourceEnum.Food,
             ResourceEnum = ResourceEnum.Meat,
@@ -43,8 +43,8 @@ namespace Managers.Buildings
             BaseRate = 1,
             BaseCost = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
-                {MetaResourceEnum.Food, 50},
-                {MetaResourceEnum.Production, 100}
+                {MetaResourceEnum.Food, 5},
+                {MetaResourceEnum.Production, 10}
             },
             CostIncrease = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
@@ -53,7 +53,7 @@ namespace Managers.Buildings
             }
         };
 
-        public static readonly Converter JuiceHut = new Converter
+        public static readonly ConverterBuilding JuiceHut = new ConverterBuilding
         {
             MetaResourceEnum = MetaResourceEnum.Food,
             ResourceEnum = ResourceEnum.Berry,
@@ -62,8 +62,8 @@ namespace Managers.Buildings
             BaseRate = 1,
             BaseCost = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
-                {MetaResourceEnum.Food, 50},
-                {MetaResourceEnum.Production, 100}
+                {MetaResourceEnum.Food, 5},
+                {MetaResourceEnum.Production, 10}
             },
             CostIncrease = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
@@ -72,7 +72,7 @@ namespace Managers.Buildings
             }
         };
 
-        public static readonly Converter LumberHut = new Converter
+        public static readonly ConverterBuilding LumberHut = new ConverterBuilding
         {
             MetaResourceEnum = MetaResourceEnum.Production,
             ResourceEnum = ResourceEnum.Wood,
@@ -81,8 +81,8 @@ namespace Managers.Buildings
             BaseRate = 1,
             BaseCost = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
-                {MetaResourceEnum.Food, 50},
-                {MetaResourceEnum.Production, 100}
+                {MetaResourceEnum.Food, 5},
+                {MetaResourceEnum.Production, 10}
             },
             CostIncrease = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
@@ -91,7 +91,7 @@ namespace Managers.Buildings
             }
         };
 
-        public static readonly Converter MasonHut = new Converter
+        public static readonly ConverterBuilding MasonHut = new ConverterBuilding
         {
             MetaResourceEnum = MetaResourceEnum.Production,
             ResourceEnum = ResourceEnum.Stone,
@@ -100,8 +100,8 @@ namespace Managers.Buildings
             BaseRate = 1,
             BaseCost = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
-                {MetaResourceEnum.Food, 50},
-                {MetaResourceEnum.Production, 100}
+                {MetaResourceEnum.Food, 5},
+                {MetaResourceEnum.Production, 10}
             },
             CostIncrease = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
@@ -110,7 +110,7 @@ namespace Managers.Buildings
             }
         };
 
-        public static readonly Converter KilnHut = new Converter
+        public static readonly ConverterBuilding KilnHut = new ConverterBuilding
         {
             MetaResourceEnum = MetaResourceEnum.Production,
             ResourceEnum = ResourceEnum.Clay,
@@ -119,8 +119,8 @@ namespace Managers.Buildings
             BaseRate = 1,
             BaseCost = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
-                {MetaResourceEnum.Food, 50},
-                {MetaResourceEnum.Production, 100}
+                {MetaResourceEnum.Food, 5},
+                {MetaResourceEnum.Production, 10}
             },
             CostIncrease = new Dictionary<MetaResourceEnum, AdvancedNumber>
             {
