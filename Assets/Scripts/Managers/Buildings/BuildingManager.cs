@@ -19,6 +19,11 @@ namespace Managers.Buildings
         private Dictionary<BuildingEnum, BaseBuilding> _buildingsByEnum;
         private Stack<BuildingEnum> _toBuild = new Stack<BuildingEnum>();
 
+        public BaseBuilding GetBuildingInfo(BuildingEnum buildingEnum)
+        {
+            return _buildingsByEnum[buildingEnum];
+        }
+
         public SaveInfo Save(SaveInfo saveInfo)
         {
             return saveInfo;
@@ -164,7 +169,7 @@ namespace Managers.Buildings
                         break;
                     case ResourceType.Resource:
                         foreach (var resourceEnum in EnumUtils.GetResourceEnums(building.MetaResourceEnum))
-                        {                           
+                        {
                             resources[resourceEnum].MaxValue = building.CurrentStorage;
                         }
                         break;

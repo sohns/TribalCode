@@ -4,6 +4,7 @@ using Managers.Buildings;
 using Managers.Meta;
 using Managers.Outputs.Building;
 using Managers.Outputs.MetaResource;
+using Managers.Outputs.MouseOver;
 using Managers.Outputs.Resource;
 using Managers.Resources;
 using UnityEngine;
@@ -23,12 +24,18 @@ namespace Managers.Outputs
         private readonly Dictionary<BuildingEnum, GameObject> _buildingDictionary =
             new Dictionary<BuildingEnum, GameObject>();
 
+        private GameObject _mouseOver;
+
+        public BuildingEnum BuildingEnum;
+
         public void Advance(float speed)
         {
             UpdatedMetaResources();
             UpdatedResources();
             UpdateBuildings();
         }
+
+       
 
         private void UpdateBuildings()
         {
@@ -80,6 +87,16 @@ namespace Managers.Outputs
             }
         }
 
+        public void SetMouseOver(BuildingEnum buildingEnum)
+        {
+            if (_mouseOver == null)
+            {
+                return;
+            }
+            _mouseOver.GetComponent<MouseOverBaseDisplay>()
+                .SetInfo(BuildingManager.ThisManager.GetBuildingInfo(BuildingEnum));
+        }
+
         public void ResourceRegistration(ResourceEnum resourceEnum, GameObject registrationGameObject)
         {
             _resourceDictionary.Add(resourceEnum, registrationGameObject);
@@ -93,6 +110,11 @@ namespace Managers.Outputs
         public void BuildingRegistration(BuildingEnum buildingEnum, GameObject registrationGameObject)
         {
             _buildingDictionary.Add(buildingEnum, registrationGameObject);
+        }
+
+        public void MouseOverRegistration(GameObject o)
+        {
+            _mouseOver = o;
         }
 
         public SaveInfo Save(SaveInfo saveInfo)

@@ -365,6 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 1534571257}
   Change: {fileID: 1324527588}
+  MaxValue: {fileID: 0}
   ResourceEnum: 6
 --- !u!1 &267079377
 GameObject:
@@ -663,6 +664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 0}
   Change: {fileID: 0}
+  MaxValue: {fileID: 0}
 --- !u!222 &304981785
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -753,6 +755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 476138897}
   Change: {fileID: 348994931}
+  MaxValue: {fileID: 0}
   MetaResourceEnum: 1
 --- !u!1 &348994931
 GameObject:
@@ -803,6 +806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 0}
   Change: {fileID: 0}
+  MaxValue: {fileID: 0}
 --- !u!222 &348994934
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -970,6 +974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 0}
   Change: {fileID: 0}
+  MaxValue: {fileID: 0}
 --- !u!222 &476138900
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1239,6 +1244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 977227955}
   Change: {fileID: 775088256}
+  MaxValue: {fileID: 0}
   ResourceEnum: 3
 --- !u!1 &756588010
 GameObject:
@@ -1324,6 +1330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 1756215088}
   Change: {fileID: 1171611118}
+  MaxValue: {fileID: 0}
   ResourceEnum: 2
 --- !u!1 &775088256
 GameObject:
@@ -1486,6 +1493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 0}
   Change: {fileID: 0}
+  MaxValue: {fileID: 0}
 --- !u!222 &775088260
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1576,6 +1584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 1108767494}
   Change: {fileID: 891095959}
+  MaxValue: {fileID: 0}
   ResourceEnum: 1
 --- !u!1 &853972599
 GameObject:
@@ -1661,6 +1670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 1948987347}
   Change: {fileID: 304981781}
+  MaxValue: {fileID: 0}
   ResourceEnum: 4
 --- !u!1 &891095959
 GameObject:
@@ -1823,6 +1833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 0}
   Change: {fileID: 0}
+  MaxValue: {fileID: 0}
 --- !u!222 &891095963
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1948,6 +1959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 0}
   Change: {fileID: 0}
+  MaxValue: {fileID: 0}
 --- !u!114 &977227958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2306,6 +2318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 0}
   Change: {fileID: 0}
+  MaxValue: {fileID: 0}
 --- !u!1 &1171611118
 GameObject:
   m_ObjectHideFlags: 0
@@ -2467,6 +2480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 0}
   Change: {fileID: 0}
+  MaxValue: {fileID: 0}
 --- !u!222 &1171611122
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2557,6 +2571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 1241234497}
   Change: {fileID: 1972759260}
+  MaxValue: {fileID: 0}
   ResourceEnum: 5
 --- !u!1 &1241234497
 GameObject:
@@ -2607,6 +2622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 0}
   Change: {fileID: 0}
+  MaxValue: {fileID: 0}
 --- !u!114 &1241234500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2954,6 +2970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 0}
   Change: {fileID: 0}
+  MaxValue: {fileID: 0}
 --- !u!222 &1324527592
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3133,6 +3150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 2011885482}
   Change: {fileID: 1856677119}
+  MaxValue: {fileID: 0}
   MetaResourceEnum: 2
 --- !u!1 &1534571257
 GameObject:
@@ -3183,6 +3201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 0}
   Change: {fileID: 0}
+  MaxValue: {fileID: 0}
 --- !u!114 &1534571260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3350,6 +3369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 0}
   Change: {fileID: 0}
+  MaxValue: {fileID: 0}
 --- !u!114 &1756215091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3517,6 +3537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 0}
   Change: {fileID: 0}
+  MaxValue: {fileID: 0}
 --- !u!222 &1856677122
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3684,6 +3705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 0}
   Change: {fileID: 0}
+  MaxValue: {fileID: 0}
 --- !u!114 &1948987350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3963,6 +3985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 0}
   Change: {fileID: 0}
+  MaxValue: {fileID: 0}
 --- !u!222 &1972759264
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4136,6 +4159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Value: {fileID: 0}
   Change: {fileID: 0}
+  MaxValue: {fileID: 0}
 --- !u!1 &2099836994
 GameObject:
   m_ObjectHideFlags: 0

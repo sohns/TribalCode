@@ -70,7 +70,8 @@ namespace Managers.Resources
                     Change = String.Format("{0:F2}", resource.Value.ChangeValue.ThisNumber),
                     Name = resource.Value.ResourceEnum.ToString(),
                     Value = String.Format("{0:F2}", resource.Value.Value.ThisNumber),
-                    ResourceEnum = resource.Value.ResourceEnum
+                    ResourceEnum = resource.Value.ResourceEnum,
+                    MaxValue =  resource.Value.MaxValue.ToString()
                 }).ToList();
         }
 
@@ -84,7 +85,8 @@ namespace Managers.Resources
                     Change = String.Format("{0:F2}", resource.Value.ChangeValue.ThisNumber),
                     Name = resource.Value.MetaResourceEnum.ToString(),
                     Value = String.Format("{0:F2}", resource.Value.Value.ThisNumber),
-                    MetaResourceEnum = resource.Value.MetaResourceEnum
+                    MetaResourceEnum = resource.Value.MetaResourceEnum,
+                    MaxValue =  resource.Value.MaxValue.ToString()
                 }).ToList();
         }
     }
