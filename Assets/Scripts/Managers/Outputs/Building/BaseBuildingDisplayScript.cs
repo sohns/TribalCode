@@ -12,10 +12,10 @@ namespace Managers.Outputs.Building
     {
         public GameObject BuildingLevel;
         public Button PurchaseButton;
-        public BuildingEnum BuildingEnum;
+        protected BuildingEnum BuildingEnum;
         protected BuildingType BuildingType;
 
-        protected void Setup()
+        public void Setup()
         {
             PurchaseButton.onClick.AddListener(BuildBuilding);
             OutputManager.ThisManager.BuildingRegistration(BuildingEnum, gameObject);

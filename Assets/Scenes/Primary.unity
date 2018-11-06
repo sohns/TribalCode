@@ -378,7 +378,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuildingLevel: {fileID: 388219211}
   PurchaseButton: {fileID: 556900360}
-  BuildingEnum: 14
 --- !u!222 &189879344
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -397,6 +396,7 @@ GameObject:
   - component: {fileID: 205725611}
   - component: {fileID: 205725610}
   - component: {fileID: 205725614}
+  - component: {fileID: 205725615}
   m_Layer: 5
   m_Name: MainCanvas
   m_TagString: Untagged
@@ -492,6 +492,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ea1aecc3569489783ff5e55fc194a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &205725615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 205725609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5f7ae629ce248f4a3a32452c44f779a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BasketYard: {fileID: 903030692}
+  StorageYard: {fileID: 2004730154}
+  Granary: {fileID: 718683487}
+  StoragePit: {fileID: 649267604}
+  SmokeHut: {fileID: 0}
+  ButcherHut: {fileID: 0}
+  JuiceHut: {fileID: 0}
+  LumberHut: {fileID: 0}
+  MasonHut: {fileID: 0}
+  KilnHut: {fileID: 0}
+  Fishery: {fileID: 1844436473}
+  HuntingLodge: {fileID: 1665028544}
+  GatheringHut: {fileID: 505937717}
+  LumberCamp: {fileID: 893676396}
+  Quarry: {fileID: 189879343}
+  ClayPit: {fileID: 939658404}
 --- !u!1 &227128915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,7 +1993,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuildingLevel: {fileID: 495650428}
   PurchaseButton: {fileID: 987923507}
-  BuildingEnum: 12
 --- !u!222 &505937718
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2200,7 +2226,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuildingLevel: {fileID: 1622085204}
   PurchaseButton: {fileID: 1381993949}
-  BuildingEnum: 3
 --- !u!222 &649267605
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2348,7 +2373,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuildingLevel: {fileID: 2085474901}
   PurchaseButton: {fileID: 837137615}
-  BuildingEnum: 2
 --- !u!222 &718683488
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3109,7 +3133,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuildingLevel: {fileID: 963893171}
   PurchaseButton: {fileID: 1548686805}
-  BuildingEnum: 13
 --- !u!222 &893676397
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3166,7 +3189,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuildingLevel: {fileID: 1239108407}
   PurchaseButton: {fileID: 1372583156}
-  BuildingEnum: 0
 --- !u!222 &903030693
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3293,7 +3315,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuildingLevel: {fileID: 490671314}
   PurchaseButton: {fileID: 346009513}
-  BuildingEnum: 15
 --- !u!222 &939658405
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6218,7 +6239,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuildingLevel: {fileID: 145672358}
   PurchaseButton: {fileID: 1297323819}
-  BuildingEnum: 11
 --- !u!222 &1665028545
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6696,7 +6716,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuildingLevel: {fileID: 1111618701}
   PurchaseButton: {fileID: 1020587933}
-  BuildingEnum: 10
 --- !u!222 &1844436474
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7255,9 +7274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ce86cb31c9448982f90578acc15fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildingLevel: {fileID: 0}
-  PurchaseButton: {fileID: 0}
-  BuildingEnum: 1
+  BuildingLevel: {fileID: 1750993492}
+  PurchaseButton: {fileID: 1475768794}
 --- !u!222 &2004730155
 CanvasRenderer:
   m_ObjectHideFlags: 0

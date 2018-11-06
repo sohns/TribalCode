@@ -2,12 +2,13 @@
 
 namespace Managers.Outputs.Building
 {
-    public class ConverterBuildingDisplayScripts : BaseBuildingDisplayScript
+    public class ConverterBuildingDisplayScripts : BaseBuildingDisplayScript, IBuildingDisplay
     {
-        void Start()
+        public void Setup(BuildingEnum buildingEnum)
         {
+            BuildingEnum = buildingEnum;
             BuildingType = BuildingType.Converter;
-            Setup();
+            base.Setup();
         }
     }
 }

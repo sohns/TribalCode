@@ -26,8 +26,6 @@ namespace Managers.Outputs
 
         private GameObject _mouseOver;
 
-        public BuildingEnum BuildingEnum;
-
         public void Advance(float speed)
         {
             UpdatedMetaResources();
@@ -94,7 +92,7 @@ namespace Managers.Outputs
                 return;
             }
             _mouseOver.GetComponent<MouseOverBaseDisplay>()
-                .SetInfo(BuildingManager.ThisManager.GetBuildingInfo(BuildingEnum));
+                .SetInfo(BuildingManager.ThisManager.GetBuildingInfo(buildingEnum));
         }
 
         public void ResourceRegistration(ResourceEnum resourceEnum, GameObject registrationGameObject)
